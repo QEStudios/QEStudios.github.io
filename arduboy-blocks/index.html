@@ -1,11 +1,38 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Arduboy Blocks</title>
+	<meta charset="utf-8">
+	<title>Arduboy Blocks</title>
+	<script src="blockly/blockly_compressed.js"></script>
+	<script src="blockly/blocks_compressed.js"></script>
+	<script src="blockly/msg/js/en.js"></script>
 </head>
 
 <body>
-	<img draggable="true" src="placeholder-1-1024x683.png" width="128">
+	<table>
+		<tr>
+			<td>
+				<h1 style="font-family: Arial">Arduboy Blocks</h1>
+			</td>
+		</tr>
+		<tr>
+			<td id="blocklyArea">
+				<xml id="toolbox" style="display: none">
+  					<block type="controls_if"></block>
+  					<block type="controls_repeat_ext"></block>
+  					<block type="logic_compare"></block>
+  					<block type="math_number"></block>
+  					<block type="math_arithmetic"></block>
+  					<block type="text"></block>
+  					<block type="text_print"></block>
+				</xml>
+				<div id="blocklyDiv" style="height: 480px; width: 960px;"></div>
+			</td>
+		</tr>
+	</table>
+	<script>
+		var workspace = Blockly.inject('blocklyDiv',
+      		{toolbox: document.getElementById('toolbox')});
+	</script>
 </body>
 </html>
